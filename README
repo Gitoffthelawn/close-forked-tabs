@@ -32,4 +32,4 @@ rm -f $EXTRDIR/* && rmdir $EXTRDIR/
 # show content of xpi
 unzip -l $XPI
 
-echo "Homepage: https://addons.mozilla.org/en-US/firefox/addon/$ID"
+echo "Homepage: https://addons.mozilla.org/firefox/addon/$ID"
