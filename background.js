@@ -1,7 +1,8 @@
+/* global browser */
+
 //const temporary = browser.runtime.id.endsWith('@temporary-addon'); // debugging?
 const manifest = browser.runtime.getManifest();
 const extname = manifest.name;
-const extdesc = manifest.description
 
 function getChildren(id,tabs) {
 	let children = new Set();
@@ -17,13 +18,13 @@ function getChildren(id,tabs) {
 
 browser.menus.create({
 	id: extname,
-	title: extdesc,
+	title: extname,
 	contexts: ["tab"],
 	onclick: async function(info, tab) {
 		if(info.menuItemId.startsWith(extname)){
-			// close only visible tabs, which are forked from the one selected 
-			const tabs = await browser.tabs.query({ 
-				hidden: false 
+			// close only visible tabs, which are forked from the one selected
+			const tabs = await browser.tabs.query({
+				hidden: false
 			});
 			const children = getChildren(tab.id, tabs);
 			browser.tabs.remove([...children]);

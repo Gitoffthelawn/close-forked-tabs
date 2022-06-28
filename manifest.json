@@ -5,11 +5,11 @@
       "background.js"
     ]
   },
-  "description": "Close forked tabs",
+  "description": "Close Forked Tabs",
   "icons": {
   },
   "manifest_version": 2,
-  "name": "close-forked-tabs",
+  "name": "Close Forked Tabs",
   "permissions": [
     "tabs",
     "menus"
